@@ -1,0 +1,78 @@
+<div id="container-instructions">
+
+    <h1>Instructions</h1>
+
+    <hr />
+
+    <div class="instructions well">
+
+        <div class="row container-fluid">
+            <p> 
+                <font size=4>
+                    Finally, on each turn in the real game you can get coins based on <strong>EITHER</strong> <strong>PERFORMANCE OR RANDOM</strong>.
+                    <br/><br/>
+                    At the start of each turn we will tell you which case is more likely.
+                    <br/><br/>
+                    The coins will look like one of the coins below and will tell you which case is more likely that turn. 
+            </font>
+                <br/><br/>
+            </p>
+
+            <table class='table table-bordered table-striped text-center'>
+              <tr>
+                <td style="padding:10px"><img src='{{ server_location }} static/images/cues/StoryEfficacyReward/low_reward_high_efficacy.png' height="200"></td>
+                <td style="padding:10px"><img src='{{ server_location }} static/images/cues/StoryEfficacyReward/low_reward_low_efficacy.png' height="200"></td> 
+              </tr>
+              <tr>
+                <td style="padding:10px"><p><font size=4>This image means that you are <strong>MOST LIKELY</strong> to get coins based on <strong>PERFORMANCE</strong>, but there is a small chance you would get coins RANDOMLY.</font></p></td>
+                <td style="padding:10px"><p><font size=4>This image means that you are <strong>MOST LIKELY</strong> to get coins <strong>RANDOMLY</strong>, but there is a small chance you would get coins based on PERFORMANCE. </font></p></td> 
+              </tr>
+            </table>
+            </font>
+        </div>
+        <script type="text/javascript">
+            $("body").unbind("keydown").focus().keydown(continue_handler);
+        </script>
+    </div>
+<hr />
+
+<div class="instructionsnav">
+    <div class="row">
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-8">
+            <button type="button" id="next" value="next" class="btn btn-success btn-lg center-block continue">
+                Continue
+            </button>
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div id="myProgress">
+    <div id="myPracticeContainer">
+        <div id="Untimedkeymapping" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div> 
+        <div id="timedKeymapping" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="keymappingTest"  class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="interference"  class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="interval"  class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="performancePractice" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="randomPractice" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="practiceAll"  class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>  
+    </div>
+    <div id="block1"  class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block2" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block3" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block4" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block5" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block6" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block7" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block8" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+ 
+ 
+  </div>

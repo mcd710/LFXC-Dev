@@ -1,0 +1,79 @@
+<div id="container-instructions">
+
+    <h1>Instructions</h1>
+
+    <hr />
+
+    <div class="instructions well">
+
+        <div class="row container-fluid">
+            <p> 
+                <font size=4>
+                Now you that you have learned the two ways in which you can get coins, you will practice the real game.
+                <br/><br/>
+                In the real game some turns are <strong>HIGH-VALUE</strong> and other turns are  <strong>LOW-VALUE</strong>.
+                <br/><br/>
+                The images below of coins will tell you the value of that turn. 
+            </font>
+                <br/><br/>
+            </p>
+
+            <table class='table table-bordered table-striped text-center'>
+              <tr>
+                <td style="padding:10px"><img src='{{ server_location }} static/images/cues/StoryEfficacyReward/lowValueCoin.png' height="200"></td>
+                <td style="padding:10px"><img src='{{ server_location }} static/images/cues/StoryEfficacyReward/highValueCoin.png' height="200"></td> 
+              </tr>
+              <tr>
+                <td style="padding:10px"><p><font size=4>This image means that you are on a <strong>LOW-VALUE</strong> turn when color words are worth <span id="lowValue"></span> coin.</font></p></td>
+                <td style="padding:10px"><p><font size=4>This image means that you are on a <strong>HIGH-VALUE</strong> turn, when color words are worth <span id="highValue"></span> coins.</font></p></td> 
+              </tr>
+            </table>
+            </font>
+        </div>
+        <script type="text/javascript">
+            $('#lowValue').html(lowValue.toFixed(0));
+            $('#highValue').html(highValue.toFixed(0));
+            $("body").unbind("keydown").focus().keydown(continue_handler);
+        </script>
+    </div>
+<hr />
+
+<div class="instructionsnav">
+    <div class="row">
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-8">
+            <button type="button" id="next" value="next" class="btn btn-success btn-lg center-block continue">
+                Continue
+            </button>
+        </div>
+        <div class="col-xs-2">
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<div id="myProgress">
+    <div id="myPracticeContainer">
+        <div id="Untimedkeymapping" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div> 
+        <div id="timedKeymapping" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="keymappingTest"  class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="interference"  class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="interval"  class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="performancePractice" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="randomPractice" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="practiceAll"  class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>  
+    </div>
+    <div id="block1"  class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block2" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block3" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block4" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block5" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block6" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block7" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block8" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+ 
+ 
+  </div>

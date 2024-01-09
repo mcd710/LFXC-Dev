@@ -1,0 +1,72 @@
+<div id="container-instructions">
+
+	<h1>Instructions</h1>
+
+	<hr />
+
+	<div class="instructions well">
+
+        <p>
+            <font size=4>
+                Now you are ready to start the real game! From now on, all of your coins will count towards your bonus. 
+                <br/><br/>
+                You will do 8 blocks of the task. 
+                <br/><br/>
+                In each block you will always see one of the pictures below before each interval. 
+                <br/><br/>
+                This picture will tell you how many coins the color words are worth and whether you can get coins mostly based on <strong>PERFORMANCE</strong>, or mostly by <strong>RANDOM</strong> chance.           </font>
+                <br/><br/>
+            <img id="FullReward", style="height: 400px">
+
+        </p>
+
+        <script type="text/javascript">
+            document.getElementById("FullReward").src = '{{ server_location }} static/images/cues/StoryEfficacyReward/FullBreakdown.png'
+
+            $("body").unbind("keydown").focus().keydown(continue_handler);
+        </script>
+
+    </div>
+
+    <hr />
+
+
+    <div class="instructionsnav">
+        <div class="row">
+            <div class="col-xs-2">
+            </div>
+            <div class="col-xs-8">
+                <button type="button" id="next" value="next" class="btn btn-primary btn-lg center-block continue">
+                    Continue <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+            </div>
+            <div class="col-xs-2">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="myProgress">
+    <div id="myPracticeContainer">
+        <div id="Untimedkeymapping" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div> 
+        <div id="timedKeymapping" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="keymappingTest"  class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="interference"  class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="interval"  class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="performancePractice" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="randomPractice" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="practiceAll"  class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>  
+    </div>
+    <div id="block1"  class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block2" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block3" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block4" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block5" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block6" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block7" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block8" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+ 
+ 
+  </div>

@@ -1,0 +1,134 @@
+<div id="container-instructions">
+
+    <h1>QUIZ</h1>
+
+
+    <div class="instructions well">
+
+        <p>
+            Please answer the following question based off of the instructions that you just read.
+        </p>
+
+        <ol type="1">
+            
+            <li>If you see this image at the begining of a turn it means <img id="HighValueLowEfficacy", style="height: 75px;width: 75px"></strong><br />                
+                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q1a1"> It is a Low Value(1 coin) and you are most likely to get coins based on PERFORMANCE, but there is a small chance you would get coins RANDOMLY.<br />
+                    <input type="radio" class="answer" name="q1answer" id="q1a2"> It is a Low Value(1 coin) and you are most likely to get coins RANDOMLY, but there is a small chance you would earn points based on PERFORMANCE.  <br />
+                    <input type="radio" class="answer" name="q1answer" id="q1a3"> It is a High Value(10 coins) and you are most likely to get coins based on PERFORMANCE, but there is a small chance you would get coins RANDOMLY. <br />
+                    <input type="radio" class="answer" name="q1answer" id="q1a4"> It is a High Value(10 coins) and you are most likely to get coins RANDOMLY, but there is a small chance you would earn points based on PERFORMANCE.<br />
+                </form>
+            </li>
+
+            <hr />
+
+            <li>If you see this image at the begining of a turn it means <img id="LowValueHighEfficacy", style="height: 75px;width: 75px"></strong><br /> 
+                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q2a1"> It is a Low Value(1 coin) and you are most likely to get coins based on PERFORMANCE, but there is a small chance you would get coins RANDOMLY.<br />
+                    <input type="radio" class="answer" name="q1answer" id="q2a2"> It is a Low Value(1 coin) and you are most likely to get coins RANDOMLY, but there is a small chance you would earn points based on PERFORMANCE.  <br />
+                    <input type="radio" class="answer" name="q1answer" id="q2a3"> It is a High Value(10 coins) and you are most likely to get coins based on PERFORMANCE, but there is a small chance you would get coins RANDOMLY. <br />
+                    <input type="radio" class="answer" name="q1answer" id="q2a4"> It is a High Value(10 coins) and you are most likely to get coins RANDOMLY, but there is a small chance you would earn points based on PERFORMANCE.<br />
+                </form>
+            </li>
+
+            <hr />
+
+            <li>If you see this image at the begining of a turn it means <img id="LowValueLowEfficacy", style="height: 75px;width: 75px"></strong><br /> 
+                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q3a1"> It is a Low Value(1 coin) and you are most likely to get coins based on PERFORMANCE, but there is a small chance you would get coins RANDOMLY.<br />
+                    <input type="radio" class="answer" name="q1answer" id="q3a2"> It is a Low Value(1 coin) and you are most likely to get coins RANDOMLY, but there is a small chance you would earn points based on PERFORMANCE.  <br />
+                    <input type="radio" class="answer" name="q1answer" id="q3a3"> It is a High Value(10 coins) and you are most likely to get coins based on PERFORMANCE, but there is a small chance you would get coins RANDOMLY. <br />
+                    <input type="radio" class="answer" name="q1answer" id="q3a4"> It is a High Value(10 coins) and you are most likely to get coins RANDOMLY, but there is a small chance you would earn points based on PERFORMANCE.<br />
+                </form>
+            </li>
+
+            <hr />
+
+            <li>If you see this image at the begining of a turn it means <img id="HighValueHighEfficacy", style="height: 75px;width: 75px"></strong><br /> 
+                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q4a1"> It is a Low Value(1 coin) and you are most likely to get coins based on PERFORMANCE, but there is a small chance you would get coins RANDOMLY.<br />
+                    <input type="radio" class="answer" name="q1answer" id="q4a2"> It is a Low Value(1 coin) and you are most likely to get coins RANDOMLY, but there is a small chance you would earn points based on PERFORMANCE.  <br />
+                    <input type="radio" class="answer" name="q1answer" id="q4a3"> It is a High Value(10 coins) and you are most likely to get coins based on PERFORMANCE, but there is a small chance you would get coins RANDOMLY. <br />
+                    <input type="radio" class="answer" name="q1answer" id="q4a4"> It is a High Value(10 coins) and you are most likely to get coins RANDOMLY, but there is a small chance you would earn points based on PERFORMANCE.<br />
+                </form>
+            </li>
+        </ol>
+    </p>
+    
+</div>
+
+
+<div class="instructionsnav">
+    <div class="row" id="buttons">
+        <button type="button" id="instructButton" class="btn btn-primary btn-lg" onclick="return instruct_onclick()">
+                    Return to Instructions
+            </button>
+            <button type="button" id="submitButton" class="btn btn-primary btn-lg pull-right" onclick="return submit_onclick()">
+                    Submit Answer
+            </button>
+    </div>
+</div>
+
+</div>
+
+
+<script>
+     $("body").unbind("keydown").focus().keydown(continue_handler);
+
+    document.getElementById("HighValueLowEfficacy").src = "/static/images/cues/StoryEfficacyReward/high_reward_low_efficacy.png";
+    document.getElementById("LowValueHighEfficacy").src = "/static/images/cues/StoryEfficacyReward/low_reward_high_efficacy.png";
+    document.getElementById("LowValueLowEfficacy").src = "/static/images/cues/StoryEfficacyReward/low_reward_low_efficacy.png";
+    document.getElementById("HighValueHighEfficacy").src= "/static/images/cues/StoryEfficacyReward/high_reward_high_efficacy.png";
+
+
+    function instruct_onclick() {
+
+        psiTurk.doInstructions(
+            instructionEfficacyALLPages,practiceBlocksGardenPointsStroop('practiceAll','mainStart')
+        );
+
+    }
+
+    function submit_onclick() {
+
+        var radios = document.getElementsByClassName("answer");
+        var answers = 0;
+
+        for (var i = 0, len = radios.length; i < len; i++) {
+            if (radios[i].checked) {
+                answers ++;
+            }
+        }
+        console.log(radios)
+        console.log(answers)
+
+        if (answers == 4) {     // if number fo answers eqauls number of questions
+            check_answers()
+        } else {
+            alert('You did not answer the question. Please go back and answer all the questions.');
+        }
+    }
+
+    function check_answers() {
+        // check that the right answers where chosen 
+        if (!(document.getElementById('q1a4').checked && document.getElementById('q2a1').checked && document.getElementById('q3a2').checked && document.getElementById('q4a3').checked )) {
+            incorrect3 = incorrect3 + 1;
+            
+            alert('You have made an error, please check your answer.');    
+        } else {
+            var src = document.getElementById("buttons");
+            var submitButton = document.getElementById("submitButton");
+            var instructButton = document.getElementById("instructButton");
+            var nextButton = document.createElement("button");
+            nextButton.textContent = 'Correct! Press to continue.';
+            nextButton.setAttribute("id", "next");
+            nextButton.setAttribute("value", "submit");
+            nextButton.setAttribute("class", "btn btn-success btn-lg center-block continue");        
+            src.appendChild(nextButton);
+            src.removeChild(submitButton);
+            src.removeChild(instructButton);
+        };
+
+    }
+
+</script>

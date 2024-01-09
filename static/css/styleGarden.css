@@ -1,0 +1,178 @@
+
+body {
+  padding:0px;
+  margin: 0px;
+  color: black;
+  font-weight: 300; 
+  font-size: 13pt;
+  background-image: url('/static/images/BackgroundFarm.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/* text styling */
+strong {
+  font-weight: 600;         
+}
+
+.warm {
+  color: steelblue;
+  text-align: justify;
+}
+
+.cool {
+  color: #ccccff;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+
+/* these are all the same for now, but easy to modify individually */
+#container-not-an-ad, #container-error, #container-consent,  #container-questionnaire {
+  margin: 30px;
+}
+
+#container-board{
+  background-image: url('/static/images/Farmboard.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; 
+  margin: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: perspective(1000px);
+
+}
+#container-flyer{
+  background-color: white;
+  margin: 30px;
+}
+
+
+#container-barrel{
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; 
+  margin: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#stim{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#stimImg{
+  font-size: 65px;
+  font-weight: 600;
+  line-height: 250px;
+  height: 250px;
+  margin: 0 auto;
+  visibility: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+#outer {
+    position: relative;
+    width: auto;
+    height: 250px;
+}
+#inner {
+    position: absolute;
+    width: inherit;
+    left: 50%;
+    bottom: 0;
+    margin: 0 0 0 -100px;
+    background: blue;
+}
+
+#container-exp, #container-instructions, {
+  margin: 30px;
+}
+
+/* ad.html  - the ad that people view first */
+#adlogo {
+  width: 140px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  margin-right: 1em;
+}
+
+/* consent.html - the consent form */
+#consent {
+  margin: 0 auto;
+  margin-top: 0;
+  width: 800px;
+  font-size: 100%;
+}
+
+.legal {
+  text-align: justify;
+  font-size: 11pt;
+  line-height: 1.1em;
+}
+
+hr {
+  color: #ffffff;
+}
+
+#title {
+  margin-top: -45px;
+  height: 45px;
+  text-align: center;
+}
+
+#trial {
+  height:90vh;
+  padding-top: 20%;
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+}
+
+
+
+#query {
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+/* errors */
+#error img {
+  padding-right: 10px;
+  padding-top: 15px;
+}
+
+#intervalMsg {
+  text-align: center;
+  font-size:50px;
+  font-weight:200;
+  margin:150px;
+  margin-top: 103px;
+  padding-top: 90px
+}
+
+#scoreCounter {
+  text-align: center;
+  font-size:30px;
+  font-weight:200;
+  margin:150px;
+  margin-top: 103px;
+  padding-top: 20px
+}
+
+.center img {        
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}

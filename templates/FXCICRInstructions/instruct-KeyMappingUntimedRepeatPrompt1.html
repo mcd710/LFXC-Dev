@@ -1,0 +1,76 @@
+<div id="container-instructions">
+
+   <h1>Instructions</h1>
+
+   <hr />
+
+   <div class="instructions well">
+
+       <p>
+           Now you will do the exact same thing but this time it will be <strong>timed</strong> and you will have many more trials.
+           <br></br>
+           If you would like to do more untimed pratice hit the Return to Untimed. You will see the instructions again and have the oppertunity to do more untimed practice.
+           <br></br>
+           If you would like to continue to the timed practice hit Continue. 
+       </p>
+
+       
+   </div>
+
+<hr />
+
+<div class="instructionsnav">
+   <div class="row" id="buttons">
+       <button type="button" id="instructButton" class="btn btn-primary btn-lg" onclick="return instruct_onclick()">
+                   Return to Untimed
+           </button>
+           <button type="button" id="submitButton" class="btn btn-primary btn-lg pull-right" onclick="return submit_onclick()">
+                   Continue
+           </button>
+   </div>
+</div>
+
+</div>
+
+
+<script>
+   $("body").unbind("keydown").focus().keydown(continue_handler);
+   function instruct_onclick() {
+
+psiTurk.doInstructions(
+   keyMappingUntimedInstructions,unTimedColorMappingPractice('keyMappingForward')
+);
+
+}
+
+   function submit_onclick() {
+
+       blockPartGarden("timedKeymapping")
+   }
+
+
+</script>
+
+<div id="myProgress">
+   <div id="myPracticeContainer">
+       <div id="Untimedkeymapping" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div> 
+       <div id="timedKeymapping" class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+       <div id="keymappingTest"  class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+       <div id="interference"  class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+       <div id="interval"  class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+       <div id="performancePractice" class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+       <div id="randomPractice" class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+       <div id="practiceAll"  class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>  
+   </div>
+   <div id="block1"  class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+   <div id="block2" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+   <div id="block3" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+   <div id="block4" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+   <div id="block5" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+   <div id="block6" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+   <div id="block7" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+   <div id="block8" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+
+
+ </div>
+

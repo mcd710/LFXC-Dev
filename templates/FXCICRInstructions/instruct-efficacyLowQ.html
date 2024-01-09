@@ -1,0 +1,130 @@
+<div id="container-instructions">
+
+    <h1>QUIZ</h1>
+
+
+    <div class="instructions well">
+
+        <p>
+            Please answer the following question based off of the instructions that you just read.
+        </p>
+
+        <ol type="1">
+            
+            <li>If you see this image at the begining of a turn it means you can get coins based on <img id="dieRandom", style="height: 75px;width: 75px"></strong><br />                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q1a1"> Performance <br />
+                    <input type="radio" class="answer" name="q1answer" id="q1a2"> Randomly<br />
+                    <input type="radio" class="answer" name="q1answer" id="q1a3"> Based on Performance AND Randomly <br />
+                    <input type="radio" class="answer" name="q1answer" id="q1a4"> Neither Random NOR Performance<br />
+                </form>
+            </li>
+
+            <hr />
+
+            <li>If you answer 10 trials correctly and 1 trial incorrectly how many coins will you get for that turn
+                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q2a1"> 1<br />
+                    <input type="radio" class="answer" name="q1answer" id="q2a2"> 10<br />
+                    <input type="radio" class="answer" name="q1answer" id="q2a3"> 9<br />
+                    <input type="radio" class="answer" name="q1answer" id="q2a4"> 11<br />
+                    <input type="radio" class="answer" name="q1answer" id="q2a5"> The number of coins you get is not determined by how many you answer correct or incorrect<br />
+
+                </form>
+            </li>
+
+            <hr />
+
+            <li>The Tracker at the bottom during the interval shows you
+                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q3a1"> The number of coins you would collect for being incorrect<br />
+                    <input type="radio" class="answer" name="q1answer" id="q3a2"> The number of coins you would collect based on random chance<br />
+                    <input type="radio" class="answer" name="q1answer" id="q3a3"> The number of coins you would collect based on the previous turn<br />
+                    <input type="radio" class="answer" name="q1answer" id="q3a4"> The number of coins you would collect based on your correct performance<br />
+                </form>
+            </li>
+
+            <hr />
+
+            <li>You find out the number of coins you get
+                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q4a1"> At the start of a turn<br />
+                    <input type="radio" class="answer" name="q1answer" id="q4a2"> At the end of a turn<br />
+                    <input type="radio" class="answer" name="q1answer" id="q4a3"> During the turn<br />
+                    <input type="radio" class="answer" name="q1answer" id="q4a4"> At the end of the game<br />
+                </form>
+            </li>
+        </ol>
+    </p>
+    
+</div>
+
+
+<div class="instructionsnav">
+    <div class="row" id="buttons">
+        <button type="button" id="instructButton" class="btn btn-primary btn-lg" onclick="return instruct_onclick()">
+                    Return to Instructions
+            </button>
+            <button type="button" id="submitButton" class="btn btn-primary btn-lg pull-right" onclick="return submit_onclick()">
+                    Submit Answer
+            </button>
+    </div>
+</div>
+
+</div>
+
+
+<script>
+     $("body").unbind("keydown").focus().keydown(continue_handler);
+
+    //document.getElementById("fruitT1").src = "/static/images/cues/efficacyGarden/performance.png";
+    document.getElementById("dieRandom").src = "/static/images/cues/StoryEfficacyReward/dice.png";
+
+    function instruct_onclick() {
+
+        psiTurk.doInstructions(
+            instructionEfficacyLowPages,practiceBlocksGardenPointsStroop('randomPractice','practiceAll')
+        );
+
+    }
+
+    function submit_onclick() {
+
+        var radios = document.getElementsByClassName("answer");
+        var answers = 0;
+
+        for (var i = 0, len = radios.length; i < len; i++) {
+            if (radios[i].checked) {
+                answers ++;
+            }
+        }
+        console.log(radios)
+        console.log(answers)
+
+        if (answers == 4) {     // if number fo answers eqauls number of questions
+            check_answers()
+        } else {
+            alert('You did not answer the question. Please go back and answer all the questions.');
+        }
+    }
+
+    function check_answers() {
+        // check that the right answers where chosen 
+        if (!(document.getElementById('q1a2').checked && document.getElementById('q2a5').checked && document.getElementById('q3a4').checked && document.getElementById('q4a2').checked )) {
+            alert('You have made an error, please check your answer.');    
+        } else {
+            var src = document.getElementById("buttons");
+            var submitButton = document.getElementById("submitButton");
+            var instructButton = document.getElementById("instructButton");
+            var nextButton = document.createElement("button");
+            nextButton.textContent = 'Correct! Press to continue.';
+            nextButton.setAttribute("id", "next");
+            nextButton.setAttribute("value", "submit");
+            nextButton.setAttribute("class", "btn btn-success btn-lg center-block continue");        
+            src.appendChild(nextButton);
+            src.removeChild(submitButton);
+            src.removeChild(instructButton);
+        };
+
+    }
+
+</script>

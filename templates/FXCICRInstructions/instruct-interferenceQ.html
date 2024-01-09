@@ -1,0 +1,115 @@
+<div id="container-instructions">
+
+    <h1>Instructions</h1>
+
+    <hr />
+
+    <div class="instructions well">
+
+        <p>
+            Please answer the following question based off of the instructions that you just read.
+        </p>
+
+        <ol type="1">
+            
+            <li>What key would you press if you saw "<span style="color: red">GREEN</span>"
+                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q1a1"> S for red<br />
+                    <input type="radio" class="answer" name="q1answer" id="q1a2"> D for yellow<br />
+                    <input type="radio" class="answer" name="q1answer" id="q1a3"> K for green<br />
+                    <input type="radio" class="answer" name="q1answer" id="q1a4"> L for blue<br />
+                </form>
+            </li>
+
+            <hr />
+
+            <li>What key would you press if you saw "<span style="color: green">RED</span>"
+                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q2a1"> S for red<br />
+                    <input type="radio" class="answer" name="q1answer" id="q2a2"> D for yellow<br />
+                    <input type="radio" class="answer" name="q1answer" id="q2a3"> K for green<br />
+                    <input type="radio" class="answer" name="q1answer" id="q2a4"> L for blue<br />
+                </form>
+            </li>
+
+            <hr />
+
+            <li>What key would you press if you saw "<span style="color: blue">YELLOW</span>"
+                <form>
+                    <input type="radio" class="answer" name="q1answer" id="q3a1"> S for red<br />
+                    <input type="radio" class="answer" name="q1answer" id="q3a2"> D for yellow<br />
+                    <input type="radio" class="answer" name="q1answer" id="q3a3"> K for green<br />
+                    <input type="radio" class="answer" name="q1answer" id="q3a4"> L for blue<br />
+                </form>
+            </li>
+        </ol>
+    </div>
+
+<hr />
+
+<div class="instructionsnav">
+    <div class="row" id="buttons">
+        <button type="button" id="instructButton" class="btn btn-primary btn-lg" onclick="return instruct_onclick()">
+                    Return to Instructions
+            </button>
+            <button type="button" id="submitButton" class="btn btn-primary btn-lg pull-right" onclick="return submit_onclick()">
+                    Submit Answer
+            </button>
+    </div>
+</div>
+
+</div>
+
+
+<script>
+    $("body").unbind("keydown").focus().keydown(continue_handler);
+    function instruct_onclick() {
+
+psiTurk.doInstructions(
+    interferenceInstructions,StroopPractice('interval')
+);
+
+}
+
+    function submit_onclick() {
+
+        var radios = document.getElementsByClassName("answer");
+        var answers = 0;
+
+        for (var i = 0, len = radios.length; i < len; i++) {
+            if (radios[i].checked) {
+                answers ++;
+            }
+        }
+        console.log(radios)
+        console.log(answers)
+
+        if (answers == 3) {     // if number fo answers eqauls number of questions
+            check_answers()
+        } else {
+            alert('You did not answer the question. Please go back and answer all the questions.');
+        }
+    }
+
+    function check_answers() {
+        // check that the right answers where chosen 
+        if (!(document.getElementById('q1a1').checked && document.getElementById('q2a3').checked && document.getElementById('q3a4').checked )) {
+            incorrect1 = incorrect1 + 1;
+            alert('You made a mistake. Please go back and check your answers.');    
+        } else {
+            var src = document.getElementById("buttons");
+            var submitButton = document.getElementById("submitButton");
+            var instructButton = document.getElementById("instructButton");
+            var nextButton = document.createElement("button");
+            nextButton.textContent = 'Correct! Press to continue.';
+            nextButton.setAttribute("id", "next");
+            nextButton.setAttribute("value", "submit");
+            nextButton.setAttribute("class", "btn btn-success btn-lg center-block continue");        
+            src.appendChild(nextButton);
+            src.removeChild(submitButton);
+            src.removeChild(instructButton);
+        };
+
+    }
+
+</script>

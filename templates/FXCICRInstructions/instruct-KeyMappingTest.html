@@ -1,0 +1,96 @@
+<div id="container-instructions">
+
+	<h1>Instructions</h1>
+
+	<hr />
+
+	<div class="instructions well">
+
+        <p>
+            <font size=4></font>
+            In this test you will see a row of Xs will appear on the screen in different <strong>INK COLORS</strong> for the color words you just learned. 
+            <br><br>
+            You should the key that corresponds to the <strong>INK COLOR</strong> of the Xs.
+            <br><br>
+            Now after each response, you will NOT be told whether you were correct or incorrect.
+            <br><br>
+            </font>
+           
+            <table class='table table-bordered table-striped text-center'>
+                <tr>
+                    <td style="padding:10px"><p><font size=5>RED</font></p></td>
+                    <td style="padding:10px"><p><font size=5>YELLOW</font></p></td>
+                    <td style="padding:10px"><p><font size=5>GREEN</font></p></td>
+                    <td style="padding:10px"><p><font size=5>BLUE</font></p></td>
+                  </tr>
+                
+                 <tr>
+                   <td style="padding:10px"><img id="RedS" height="200"></td>
+                   <td style="padding:10px"><img id="YellowD" height="200"></td> 
+                   <td style="padding:10px"><img id="GreenK" height="200"></td> 
+                   <td style="padding:10px"><img id="BlueL" height="200"></td> 
+                 </tr>
+                 <tr>
+                    <td style="padding:10px"><p><font size=5> S</font></p></td>
+                    <td style="padding:10px"><p><font size=5> D </font></p></td>
+                    <td style="padding:10px"><p><font size=5> K</font></p></td>
+                    <td style="padding:10px"><p><font size=5> L</font></p></td>
+                  </tr>
+              
+               
+            </table>
+        </p>
+
+        <script type="text/javascript">
+                document.getElementById("RedS").src = paths[0];
+                    document.getElementById("YellowD").src = paths[1];
+                    document.getElementById("GreenK").src = paths[2];
+                    document.getElementById("BlueL").src = paths[3];
+                    $("body").unbind("keydown").focus().keydown(continue_handler);
+        </script>
+
+    </div>
+
+    <hr />
+
+
+    <div class="instructionsnav">
+        <div class="row">
+            <div class="col-xs-2">
+            </div>
+            <div class="col-xs-8">
+                <button type="button" id="next" value="next" class="btn btn-primary btn-lg center-block continue">
+                    Continue <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+            </div>
+            <div class="col-xs-2">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="myProgress">
+    <div id="myPracticeContainer">
+        <div id="Untimedkeymapping" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div> 
+        <div id="timedKeymapping" class='myPracticeBars' style="width: 12.5%;background-color: #FFCD58;"></div>
+        <div id="keymappingTest"  class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+        <div id="interference"  class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+        <div id="interval"  class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+        <div id="performancePractice" class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+        <div id="randomPractice" class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>
+        <div id="practiceAll"  class='myPracticeBars' style="width: 12.5%;background-color: #f7e3b5;"></div>  
+    </div>
+    <div id="block1"  class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block2" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block3" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block4" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block5" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block6" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block7" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+    <div id="block8" class='myMainTaskBars' style="width: 11.666%;background-color: #f6b8b3;"></div>
+ 
+ 
+  </div>
+ 

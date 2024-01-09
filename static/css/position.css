@@ -1,0 +1,133 @@
+.grid {
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr) repeat(6,minmax(120px,1fr)) repeat(2,1fr);
+  grid-template-rows: repeat(2, 1fr) repeat(6,minmax(120px,1fr)) repeat(2,1fr);
+}
+
+#tm {
+  grid-row:3;
+  grid-column:5/7;
+  text-align: center;
+}
+
+#tl {
+  grid-row:3;
+  grid-column:4/6;
+  text-align: center;
+}
+
+#tl {
+  grid-row:3;
+  grid-column:6/8;
+  text-align: center;	
+}
+
+#mm {
+  grid-row:4/8;
+  grid-column:5/7;
+  text-align: center;
+}
+
+#ml {
+  grid-row:4/8;
+  grid-column:4/6;
+  text-align: center;	
+}
+
+#mr {
+  grid-row:4/8;
+  grid-column:6/8;
+  text-align: center;	
+}
+
+#bm {
+  grid-row:8;
+  grid-column:5/7;
+  text-align: center;
+}
+
+#bl {
+  grid-row:8;
+  grid-column:4/6;
+  text-align: center;	
+}
+
+#br {
+  grid-row:8;
+  grid-column:6/8;
+  text-align: center;
+}
+
+#t {
+  grid-row:3;
+  grid-column:4/8;
+  text-align: center; 	
+}
+
+#m {
+  grid-row:4/8;
+  grid-column:4/8;
+  text-align: center;	
+}
+
+#b {
+  grid-row:8;
+  grid-column:4/8;
+  text-align: center;	
+}
+
+
+#background {
+  grid-row:4/8;
+  grid-column:3/9;
+  text-align: center;
+}
+
+
+#myProgress {
+  width: 50%;
+  background-color: #ddd;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+#myPracticeContainer {
+  width: 30%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.myPracticeBars {
+  width: 8.333%;
+  height: 30px;
+  background-color: #f7e3b5;
+  display: flex;
+  border: black solid 1px;
+
+}
+
+.myMainTaskBars {
+  width: 11.666%;
+  height: 30px;
+  background-color: #f6b8b3;
+  display: flex;
+  border: black solid 1px;
+
+}
+
+.PracticeFill {
+  background: #FFCD58;
+}
+
+.MainTaskFill {
+  background: #FF5C4D;
+}
